@@ -1,12 +1,12 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Pressable, type GestureResponderEvent } from 'react-native';
-import  * as Haptics from 'expo-haptics';
+import * as Haptics from 'expo-haptics';
 import { IconSymbol } from '@/components/ui/icon-symbol';
 import { Colors } from '@/constants/theme';
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
-export const HapticTab = (props: any) => {
+export const HapticTab = (props: React.ComponentProps<typeof Pressable>) => {
   const { onPress, ...rest } = props;
   const handlePress = (event: GestureResponderEvent) => {
     void Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
